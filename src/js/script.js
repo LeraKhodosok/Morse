@@ -2,6 +2,7 @@ const text = document.querySelector('.vvod');
 const morse = document.querySelector('.morse');
 const russian = document.querySelector('.russian');
 const translator = document.querySelector('.trans');
+const clear = document.querySelector('.clear');
 
 let alphabet = {
     "-----": "0",
@@ -54,7 +55,7 @@ let alphabet2 = {
     "4": "....-",
     "5": ".....",
     "6": "-....",
-    "7": "--...7",
+    "7": "--...",
     "8": "---..",
     "9": "----.",
     "a": ".-",
@@ -90,7 +91,7 @@ let alphabet2 = {
 };
 
 let messageConverter = [];
-const mes = ' ';
+const mes = [];
 
 russian.addEventListener('click', () => {
     let vvod = text.value;
@@ -100,18 +101,21 @@ russian.addEventListener('click', () => {
         });
         messageConverter.push(" ");
     })
-
     translator.value = messageConverter.join("");
-    console.log(messageConverter.join("")); //это для себя проверяла
 })
 
 morse.addEventListener('click', () => {
     let vvod = text.value;
-    for (var key in alphabet2) { 
-        if (vvod == key) {
-            console.log(alphabet2[key]); //это для себя проверяла
-            translator.value = alphabet2[key];
-        }
-    }
+    vvod.split(" ").map(function (word) {
+        word.split("").map(function (letter) {
+            mes.push(alphabet2[letter]);
+        });
+        mes.push(" ");
+    });
+    translator.value = mes.join("");
 })
 
+clear.addEventListener('click', () => {
+    text.value = '';
+    translator.value = '';
+})

@@ -1,0 +1,28 @@
+form {
+    display: flex;
+   justify-content:start;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    margin-right: 50px;
+}
+
+.btns {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    margin-right: 50px;
+}
+
+.vvod {
+    margin-bottom: 20px;
+}
+
+.morse {
+    margin-bottom: 20px;
+}
