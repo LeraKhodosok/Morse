@@ -105,17 +105,16 @@ russian.addEventListener('click', () => {
 })
 
 morse.addEventListener('click', () => {
-    let vvod = text.value;
+    let vvod = text.value; 
     vvod.split(" ").map(function (word) {
         word.split("").map(function (letter) {
             mes.push(alphabet2[letter]);
         });
         mes.push(" ");
     });
-    translator.value = mes.join("");
+    translator.value = mes.join(" ");
 })
 
 clear.addEventListener('click', () => {
-    text.value = '';
     translator.value = '';
 })
