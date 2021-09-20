@@ -113,8 +113,10 @@ morse.addEventListener('click', () => {
         mes.push(" ");
     });
     translator.value = mes.join(" ");
+    vvod = '';
 })
 
 clear.addEventListener('click', () => {
-    translator.value = '';
+    let p = translator.value;
+    translator.value = " ";
 })
